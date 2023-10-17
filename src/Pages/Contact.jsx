@@ -2,6 +2,7 @@ import useMediaQuery from "../shared/hooks/useMediaHook";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import Layout from "../shared/Layout/Layout";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -52,72 +53,74 @@ const Contact = () => {
 
     return (
         <AnimatePresence>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 4 }} exit={{ opacity: 2 }}>
-                <div className="flex-wrapper-space-between" style={{ padding: "50px 20vw", height: "60vh" }}>
-                    <div className="flex-column-center" style={{ gap: 20 }}>
-                        <div>
-                            <div style={{ fontSize: "42px", fontWeight: "bold" }}>Contact</div>
-                            <p style={{ margin: 0 }}>Looking forward to hearing from you</p>
+            <Layout>
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 4 }} exit={{ opacity: 2 }}>
+                    <div className="flex-wrapper-space-between" style={{ padding: "50px 20vw", height: "60vh" }}>
+                        <div className="flex-column-center" style={{ gap: 20 }}>
+                            <div>
+                                <div style={{ fontSize: "42px", fontWeight: "bold" }}>Contact</div>
+                                <p style={{ margin: 0 }}>Looking forward to hearing from you</p>
+                            </div>
+                            <div>
+                                <div style={{ fontSize: "16px", fontWeight: "bold" }}>Phone</div>
+                                <p style={{ margin: 0 }}>(+1)6162369207</p>
+                            </div>
+                            <div>
+                                <div style={{ fontSize: "16px", fontWeight: "bold" }}>Email</div>
+                                <p style={{ margin: 0 }}>putlurin@mail.gvsu.edu</p>
+                            </div>
                         </div>
-                        <div>
-                            <div style={{ fontSize: "16px", fontWeight: "bold" }}>Phone</div>
-                            <p style={{ margin: 0 }}>(+1)6162369207</p>
-                        </div>
-                        <div>
-                            <div style={{ fontSize: "16px", fontWeight: "bold" }}>Email</div>
-                            <p style={{ margin: 0 }}>putlurin@mail.gvsu.edu</p>
-                        </div>
-                    </div>
 
-                    <div className="inputs-container">
-                        <div className="row">
-                            <TextField
-                                label="FirstName"
-                                className="i1"
-                                inputStyle={{ width: "100%" }}
-                                name={"firstName"}
-                                onChange={handleInputChange}
-                            />
-                            <TextField
-                                label="Last Name"
-                                className="i2"
-                                inputStyle={{ width: "100%" }}
-                                name={"lastName"}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <div className="row">
-                            <TextField
-                                label="Email"
-                                className="i3"
-                                inputStyle={{ width: "100%" }}
-                                name={"email"}
-                                onChange={handleInputChange}
-                            />
-                            <TextField
-                                label="Subject"
-                                className="i4"
-                                inputStyle={{ width: "100%" }}
-                                name={"subject"}
-                                onChange={handleInputChange}
-                            />
-                        </div>
-                        <div className="row">
-                            <TextField
-                                label="Message"
-                                className="i5"
-                                inputStyle={{ width: "80%" }}
-                                multiLine
-                                name={"message"}
-                                onChange={handleInputChange}
-                            />
-                            <div className="tab-link yellow" onClick={() => handleSubmit()}>
-                                Submit
+                        <div className="inputs-container">
+                            <div className="row">
+                                <TextField
+                                    label="FirstName"
+                                    className="i1"
+                                    inputStyle={{ width: "100%" }}
+                                    name={"firstName"}
+                                    onChange={handleInputChange}
+                                />
+                                <TextField
+                                    label="Last Name"
+                                    className="i2"
+                                    inputStyle={{ width: "100%" }}
+                                    name={"lastName"}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div className="row">
+                                <TextField
+                                    label="Email"
+                                    className="i3"
+                                    inputStyle={{ width: "100%" }}
+                                    name={"email"}
+                                    onChange={handleInputChange}
+                                />
+                                <TextField
+                                    label="Subject"
+                                    className="i4"
+                                    inputStyle={{ width: "100%" }}
+                                    name={"subject"}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div className="row">
+                                <TextField
+                                    label="Message"
+                                    className="i5"
+                                    inputStyle={{ width: "80%" }}
+                                    multiLine
+                                    name={"message"}
+                                    onChange={handleInputChange}
+                                />
+                                <div className="tab-link yellow" onClick={() => handleSubmit()}>
+                                    Submit
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </motion.div>
+                </motion.div>
+            </Layout>
         </AnimatePresence>
     );
 };

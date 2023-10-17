@@ -1,3 +1,4 @@
+import Layout from "../shared/Layout/Layout";
 import { Divider } from "../shared/components/Common";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -26,30 +27,32 @@ const education = [
 const Resume = () => {
     return (
         <AnimatePresence>
-            <motion.div style={{}} initial={{ opacity: 0 }} animate={{ opacity: 4 }} exit={{ opacity: 2 }}>
-                <div style={{ height: 100, padding: "0px 20vw" }}>
-                    <h1 style={{ fontSize: "42px" }}>Resume</h1>
-                </div>
-                <Section
-                    subHeading={
-                        <>
-                            Work <br /> Experience
-                        </>
-                    }
-                    projectDetails={workExperience}
-                />
-                <Divider />
-                <Section subHeading="Education" projectDetails={education} />
-                <Divider />
-                <Section
-                    subHeading={
-                        <>
-                            Skills <br /> & Expertise
-                        </>
-                    }
-                    custom={<Skills />}
-                />
-            </motion.div>
+            <Layout>
+                <motion.div style={{}} initial={{ opacity: 0 }} animate={{ opacity: 4 }} exit={{ opacity: 2 }}>
+                    <div style={{ height: 100, padding: "0px 20vw" }}>
+                        <h1 style={{ fontSize: "42px" }}>Resume</h1>
+                    </div>
+                    <Section
+                        subHeading={
+                            <>
+                                Work <br /> Experience
+                            </>
+                        }
+                        projectDetails={workExperience}
+                    />
+                    <Divider />
+                    <Section subHeading="Education" projectDetails={education} />
+                    <Divider />
+                    <Section
+                        subHeading={
+                            <>
+                                Skills <br /> & Expertise
+                            </>
+                        }
+                        custom={<Skills />}
+                    />
+                </motion.div>
+            </Layout>
         </AnimatePresence>
     );
 };

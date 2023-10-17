@@ -2,30 +2,31 @@ import { useContext } from "react";
 import "../styles.css";
 import { MyContext } from "../../App";
 import { Divider } from "../components/Common";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
     const { setCurrentTab } = useContext(MyContext);
-    const navigate = () => { };
+    const navigate = useNavigate();
     return (
         <div className="main-container">
             <div className="flex-wrapper-space-between">
-                <a href="/">
+                <a onClick={() => navigate("/")}>
                     {" "}
-                    <span className="name">Navyasree </span>
+                    <span style={{ cursor: 'pointer' }} className="name">Navyasree </span>
                     Dev
                 </a>
 
                 <div>
-                    <a className="nav-link" href="/#/resume">
+                    <a className="nav-link" onClick={() => navigate("/resume")}>
                         Resume
                     </a>{" "}
                     |
-                    <a className="nav-link" href="/#/projects">
+                    <a className="nav-link" onClick={() => navigate("/projects")}>
                         {" "}
                         Projects
                     </a>{" "}
                     |
-                    <a className="nav-link" href="/#/contact">
+                    <a className="nav-link" onClick={() => navigate("/contact")}>
                         {" "}
                         Contact
                     </a>

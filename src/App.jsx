@@ -36,15 +36,15 @@ function App() {
 
     return (
         <MyContext.Provider value={contextValue}>
-            <Layout>
-                <HashRouter basename="/">
-                    <Routes>
-                        {router.map((r) => (
-                            <Route key={r.path} path={r.path} element={r.element} />
-                        ))}
-                    </Routes>
-                </HashRouter>
-            </Layout>
+
+            <HashRouter basename="/">
+                <Routes>
+                    {router.map((r) => (
+                        <Route key={r.path} path={r.path} element={r.element} />
+                    ))}
+                </Routes>
+            </HashRouter>
+
         </MyContext.Provider>
     );
 }
