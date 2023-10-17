@@ -33,7 +33,7 @@ const Home = () => {
                             <div className="tab-link yellow" onClick={() => navigate("/resume")}>
                                 Resume
                             </div>
-                            <div className="tab-link red" onClick={() => navigate("/projects")}>
+                            <div className="tab-link red" onClick={() => window.location.href = "https://navyasree1799.github.io/GVSU-CIS641-PIRATES_/"}>
                                 Projects
                             </div>
                             <div className="tab-link green" onClick={() => navigate("/contact")}>

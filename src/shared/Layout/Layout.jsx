@@ -21,7 +21,7 @@ const Navbar = () => {
                         Resume
                     </a>{" "}
                     |
-                    <a className="nav-link" onClick={() => navigate("/projects")}>
+                    <a className="nav-link" href="https://navyasree1799.github.io/GVSU-CIS641-PIRATES_/">
                         {" "}
                         Projects
                     </a>{" "}
